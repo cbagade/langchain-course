@@ -1,12 +1,15 @@
 from dotenv import load_dotenv
 from langchain_core.prompts import PromptTemplate
 from langchain_openai import ChatOpenAI
+from langchain_core.messages import HumanMessage
+from search_agent import agent
+
 
 
 load_dotenv()
 
 
-def main():
+def first_example():
     information = """
     Source: Wikipedia, "Janhvi Kapoor" (accessed June 2, 2026).
 
@@ -39,6 +42,19 @@ def main():
     chain = summary_prompt_template | llm
     result = chain.invoke({"information": information})
     print(result.text)
+
+
+
+def main():
+    #first_example()
+    result = agent.invoke(
+        {
+            "messages": [
+                HumanMessage(content="Search the web for the latest LangChain news.")
+            ]
+        }
+    )
+    print(result["messages"][-1].text)
 
 
 if __name__ == "__main__":
