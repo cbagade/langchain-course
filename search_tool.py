@@ -16,6 +16,6 @@ def search_web(search_query: str) -> str:
     Returns:
         A string containing the search result or answer found from the internet.
     """
-    tavily_search = TavilySearch(max_results=3, include_answer=True)
+    tavily_search = TavilySearch(max_results=2, include_answer=True)
     result = tavily_search.invoke(search_query)
     return str(result)

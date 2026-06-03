@@ -2,6 +2,8 @@ from dotenv import load_dotenv
 from langchain_core.prompts import PromptTemplate
 from langchain_openai import ChatOpenAI
 from langchain_core.messages import HumanMessage
+from agent_loop_lanchain_tool_calling import run_agent
+from config import MODEL_NAME
 from search_agent import agent
 
 
@@ -34,7 +36,7 @@ def first_example():
     )
 
     llm = ChatOpenAI(
-        model="gpt-5-codex",
+        model=MODEL_NAME,
         temperature=0,
         use_responses_api=True,
     )
@@ -46,7 +48,11 @@ def first_example():
 
 
 def main():
+    print("Inside main function")
+    run_agent("What is the final price of a laptop with a gold discount?")
     #first_example()
+    """
+    commented
     result = agent.invoke(
         {
             "messages": [
@@ -55,7 +61,9 @@ def main():
         }
     )
     print(result["messages"][-1].text)
-
+    """
+    result = run_agent("What is the final price of a laptop with a gold discount and a mobile with silver discount?")
+    print(result)
 
 if __name__ == "__main__":
     main()
