@@ -4,14 +4,14 @@ from langchain_openai import ChatOpenAI
 from langchain_tavily import TavilySearch
 
 from agent_response import AgentResponse
-from config import MODEL_NAME
+from config import OPENAI_CHAT_MODEL
 from search_tool import search_web
 
 
 load_dotenv()
 
 llm = ChatOpenAI(
-    model=MODEL_NAME,
+    model=OPENAI_CHAT_MODEL,
     temperature=0,
     use_responses_api=True,
 )

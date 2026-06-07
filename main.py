@@ -2,8 +2,20 @@ from dotenv import load_dotenv
 from langchain_core.prompts import PromptTemplate
 from langchain_openai import ChatOpenAI
 from langchain_core.messages import HumanMessage
-from agent_loop_lanchain_tool_calling import run_agent
-from config import MODEL_NAME
+from agent_loop_langchain_tool import run_agent
+from config import (
+    INGESTION_FILE_PATH,
+    MODEL_NAME,
+    OPENAI_CHAT_MODEL,
+    OPENAI_API_KEY,
+    PINECONE_API_KEY,
+    PINECONE_INDEX_NAME,
+)
+from ingestion import ingest_documents
+from retrieve_ingested_data import (
+    create_retrieval_chain_with_lcel,
+    retrieve_relevant_documents,
+)
 from search_agent import agent
 
 
@@ -36,7 +48,7 @@ def first_example():
     )
 
     llm = ChatOpenAI(
-        model=MODEL_NAME,
+        model=OPENAI_CHAT_MODEL,
         temperature=0,
         use_responses_api=True,
     )
@@ -49,21 +61,48 @@ def first_example():
 
 def main():
     print("Inside main function")
-    run_agent("What is the final price of a laptop with a gold discount?")
+    #run_agent("What is the final price of a laptop with a gold discount?")
     #first_example()
-    """
-    commented
-    result = agent.invoke(
-        {
-            "messages": [
-                HumanMessage(content="Search the web for the latest LangChain news.")
-            ]
-        }
-    )
-    print(result["messages"][-1].text)
-    """
-    result = run_agent("What is the final price of a laptop with a gold discount and a mobile with silver discount?")
-    print(result)
+
+    # commented
+    # result = agent.invoke(
+    #     {
+    #         "messages": [
+    #             HumanMessage(content="Search the web for the latest LangChain news.")
+    #         ]
+    #     }
+    # )
+    # print(result["messages"][-1].text)
+
+    # commented
+    # result = run_agent("What is the final price of a laptop with a gold discount and a mobile with silver discount?")
+    # print(result)
+
+    #if not PINECONE_API_KEY or not OPENAI_API_KEY:
+    #    raise ValueError("Set PINECONE_API_KEY and OPENAI_API_KEY in your .env file.")
+
+    #ingest_documents(
+    #    file_path=INGESTION_FILE_PATH,
+    #    index_name=PINECONE_INDEX_NAME,
+    #    pinecone_api_key=PINECONE_API_KEY,
+    #    openai_api_key=OPENAI_API_KEY,
+    #)
+    
+    
+    #query = "nsx in degraded state"
+    query = "replications in red state"
+
+    relevant_docs = retrieve_relevant_documents(query)
+    print("\nRetrieved documents:")
+    for doc in relevant_docs:
+        print(doc.metadata)
+        print(doc.page_content[:300])
+        print()
+    
+    chain_with_lcel = create_retrieval_chain_with_lcel()
+    result_with_lcel = chain_with_lcel.invoke({"question": query})
+    print("\nAnswer:")
+    print(result_with_lcel)    
 
 if __name__ == "__main__":
     main()

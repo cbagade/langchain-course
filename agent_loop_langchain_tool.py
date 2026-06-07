@@ -29,7 +29,31 @@ def get_product_price(product_name: str) -> float:
         "smartphone": 499.99,
         "headphones": 199.99,
     }
-    return prices.get(product_name.lower(), 0.0)
+    product_aliases = {
+        "smartphone": "smartphone",
+        "mobile": "smartphone",
+        "cellphone": "smartphone",
+        "cell phone": "smartphone",
+        "cell": "smartphone",
+        "phone": "smartphone",
+        "iphone": "smartphone",
+        "android": "smartphone",
+        "laptop": "laptop",
+        "computer": "laptop",
+        "pc": "laptop",
+        "mac": "laptop",
+        "macbook": "laptop",
+        "notebook": "laptop",
+        "headphones": "headphones",
+        "headphone": "headphones",
+        "earphones": "headphones",
+        "earphone": "headphones",
+        "earbuds": "headphones",
+        "earbud": "headphones",
+    }
+    normalized_name = product_name.strip().lower()
+    catalog_name = product_aliases.get(normalized_name, normalized_name)
+    return prices.get(catalog_name, 0.0)
 
 @tool
 def apply_discount(price: float, discount_tiers: str) -> float:

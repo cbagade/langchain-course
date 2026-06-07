@@ -1,0 +1,426 @@
+[
+  {
+    "id": "rca-001",
+    "document": "vm-disaster-recovery-service service experiencing outage down not working unavailable failed failure. vm-disaster-recovery-service depends relies on vCloud Director platform vCD vCloud Director vCD vCloud Director director for authentication auth login service operations. vCD vCloud Director platform failed unable authenticate authentication failing. LDAP ldap directory Lightweight Directory Access Protocol connectivity failure connection issue unable connect reach. SSL LDAPS ldaps secure encrypted connection enforcement enforced required. Resolution resolved fixed correcting vCD vCloud Director LDAP ldap authentication using LDAPS ldaps SSL ssl secure connection.",
+    "product": "vm-disaster-recovery-service",
+    "metadata": {
+      "component": "vm-disaster-recovery-service,LDAP",
+      "date_occurred": "2024-10-17"
+    },
+    "date_occurred": "2024-10-17"
+  },
+  {
+    "id": "rca-002",
+    "document": "VM virtual machine provisioning failing failed not working unable provision create deploy. vcenter vSphere unable coordinate communicate connect work with IBM Cloud Hyper Protect Crypto Services HPCS hpcs key provider crypto service. broken trust relationship certificate trust issue validation failure loss of trust. HPCS hpcs presenting different public private server certificates certificate mismatch. certificate validation failures cert validation error trust broken. Resolution resolved fixed trusting HPCS hpcs server certificates trust certificates.",
+    "product": "vcenter",
+    "metadata": {
+      "component": "vcenter, HPCS, VM Provisioning",
+      "date_occurred": "2025-01-28"
+    },
+    "date_occurred": "2025-01-28"
+  },
+  {
+    "id": "rca-003",
+    "document": "vm-disaster-recovery-service availability experiencing replication failures failed failing not working. replication Red state red status error failed state. vcenter vSphere upgrade upgraded post-upgrade after upgrade. Replication tracking RT VMs virtual machines marked invalid unknown state detected. vcenter vcenter reconnect call reconnection SDDC upgrade patching code. preventive actions remove reconnect references instance remained unnoticed recurrence issue. Resolution resolved identified removed reconnect call reference.",
+    "product": "vm-disaster-recovery-service",
+    "cbc": "CHG15074362",
+    "metadata": {
+      "component": "vm-disaster-recovery-service, vcenter, Replication",
+      "date_occurred": "2026-04-14"
+    },
+    "date_occurred": "2026-04-14"
+  },
+  {
+    "id": "rca-004",
+    "document": "VCFaaS Linux VMs virtual machines within cluster lost connectivity connection to their discs disks storage unavailable inaccessible during host maintenance activities. vsan virtual SAN unstable state entered when host placed maintenance mode without Ensure Accessibility option selected. required data components not evacuated moved leading temporary VM virtual machine unavailability inaccessibility. defect bug VCFaaS Host Add automation resulted issue. Resolution resolved fixed recovered restarting impacted virtual machines VMs. corrective measure host maintenance procedures reviewed ensure Ensure Accessibility option used during short-term maintenance preventing recurrence.",
+    "product": "vcenter",
+    "metadata": {
+      "component": "VM, vsan",
+      "date_occurred": "2024-12-22"
+    },
+    "date_occurred": "2024-12-22"
+  },
+  {
+    "id": "rca-005",
+    "document": "Veeam repository VMs virtual machines became unavailable. vsan cluster running Cascade Lake CXL hosts experienced performance degradation intermittent I/O input output errors compared Sapphire Rapids SPR cluster. new hosts added Cascade Lake vsan cluster automatic data rebalancing triggered leading vsan resynchronization resync activity. limited performance scalability Cascade Lake hardware cluster unable handle additional resync workload effectively resulting performance issues I/O errors. Resolution resolved cluster upgraded Sapphire Rapids SPR hosts sufficient compute storage resources added. improved overall cluster performance allowed vsan resynchronization complete efficiently eliminated observed I/O errors.",
+    "product": "veeam",
+    "metadata": {
+      "component": "CXL, SPR, vsan performance",
+      "date_occurred": "2025-01-22"
+    },
+    "date_occurred": "2025-01-22"
+  },
+  {
+    "id": "rca-006",
+    "document": "VM virtual machine backups impacted. backup operations disrupted due loss communication between Veeam Backup Replication Veeam Backup Replication VBR SQL database. network-related issue impaired connection SQL Server impacting communication Veeam Backup Replication VBR application database. Resolution resolved Veeam Backup Replication VBR server rebooted restored database connectivity allowed backup operations resume successfully.",
+    "product": "veeam",
+    "metadata": {
+      "component": "VM, Backup",
+      "date_occurred": "2025-02-01"
+    },
+    "date_occurred": "2025-02-01"
+  },
+  {
+    "id": "rca-007",
+    "document": "nsx hosts degraded. several virtual machines VMs entered inaccessible state due network connectivity issues within nsx environment. nsxransport hosts became degraded resulting GRE tunnel failures. packets not exchanged between tunnel endpoints leading loss network connectivity affected virtual machines. Resolution resolved degraded hosts placed maintenance mode removed service further investigation hardware team. impacted virtual machines migrated healthy hosts restoring normal operations.",
+    "product": "nsx",
+    "metadata": {
+      "component": "nsx",
+      "date_occurred": "2025-02-13"
+    },
+    "date_occurred": "2025-02-13"
+  },
+  {
+    "id": "rca-008",
+    "document": "VDC Settings option not available tenants. Edit option not visible tenant UI vCloud Director vCD vCloud Director. February go-live code change inadvertently removed vCD vCloud Director Edit permission default rights bundle resulted option not displayed tenant UI. Resolution resolved code corrected restore vCD vCloud Director Edit permission default rights bundle resolving UI visibility issue.",
+    "product": "vcloud-director",
+    "cbc": "CHG10366819",
+    "metadata": {
+      "component": "vCD vCloud Director",
+      "date_occurred": "2025-02-12"
+    },
+    "date_occurred": "2025-02-12"
+  },
+  {
+    "id": "rca-009",
+    "document": "Veeam Backup Portal UI inaccessible. integration between vCloud Director Director Veeam Enterprise Manager EM FRA environment not functioning. apparent UI bug Director led Veeam EM URL not updated during configuration. human error operator did not update required Veeam EM URL Director UI resulting integration inadvertently broken. Resolution resolved Veeam Enterprise Manager configuration Director updated correct URL restored Director Veeam EM integration.",
+    "product": "veeam",
+    "metadata": {
+      "component": "Veeam, EM, vCD vCloud Director",
+      "date_occurred": "2025-02-24"
+    },
+    "date_occurred": "2025-02-24"
+  },
+  {
+    "id": "rca-010",
+    "document": "Windows activation failing newly provisioned VDCs. customers unable activate Windows virtual machines resulting failed activation transactions newly provisioned VDCs. February 2025 VCFaaS automation update introduced default deny-all firewall configuration newly provisioned VDCs security enhancement. removed previously allowed outbound access IBM Cloud private services causing Windows OS activation failures until customers explicitly enabled outbound firewall rules required endpoints. Resolution resolved customers guided manually configure required NAT firewall rules allow outbound connectivity Windows activation endpoints including TCP 1688. public documentation updated clearly state customer responsibility configuring firewall NAT rules.",
+    "product": "vcloud-director",
+    "metadata": {
+      "component": "VMware Cloud Director, Edge Gateway, Firewall",
+      "date_occurred": "2025-02-25"
+    },
+    "date_occurred": "2025-02-25"
+  },
+  {
+    "id": "rca-011",
+    "document": "vm-disaster-recovery-service performance degradation causing VM virtual machine migration issues. customers experienced socket errors slow replication multiple virtual machines failing power on after vm-disaster-recovery-service cutover. issue triggered configuration change related vcenter High Availability VCHA added DNS entry management vcenter disrupted connectivity between vcenter vm-disaster-recovery-service service. dependency exists Gen1 vm-disaster-recovery-service architecture where vm-disaster-recovery-service manager tunnel rely management vcenter. concurrent cluster resource constraints amplified impact resulting VM power-on failures degraded performance. Resolution resolved vcenter re-paired VMware Cloud Director vCD vCloud Director restore vm-disaster-recovery-service connectivity. cluster CPU memory reservations adjusted workloads rebalanced. documentation runbooks updated capture Gen1 vm-disaster-recovery-service dependency management vcenter better plan VCHA-related changes.",
+    "product": "vm-disaster-recovery-service",
+    "cbc": "CHG10477752",
+    "metadata": {
+      "component": "VMware Cloud Director, vm-disaster-recovery-service, vcenter",
+      "date_occurred": "2025-02-28"
+    },
+    "date_occurred": "2025-02-28"
+  },
+  {
+    "id": "rca-012",
+    "document": "Network connectivity disruption during nsx Edge maintenance. customers experienced loss network connectivity GRE tunnel traffic interruption during planned maintenance activity nsx Edges. maintenance action resize nsx Edge mitigating network slowness existing nsx misconfiguration related BGP Graceful Restart Helper setting caused extended failover duration. active Edge taken offline traffic failed over standby Edge due misconfigured Graceful Restart setting third-party BGP peers failover took approximately 6.5 minutes instead expected 30 seconds resulting customer impact. Resolution resolved engineering mitigated impact deploying new Edge nodes restoring network connectivity. nsx Edge maintenance activities paused follow-up tasks created correct Graceful Restart Helper configuration align future maintenance procedures known disruption behavior.",
+    "product": "nsx",
+    "cbc": "CHG10496133",
+    "metadata": {
+      "component": "nsx, Edge, BGP",
+      "date_occurred": "2025-02-21"
+    },
+    "date_occurred": "2025-02-21"
+  },
+  {
+    "id": "rca-013",
+    "document": "Veeam repository connection failures impacting backup operations. customers experienced failures connecting Veeam Backup Replication Veeam Backup Replication VBR repository resulting backup restore job failures. Veeam Backup Replication VBR server experienced sustained high CPU memory utilization caused PostgreSQL database connectivity failures prevented access Veeam console. exact underlying trigger resource exhaustion could not conclusively identified. Uptycs activity including YARA scanning memory utilization investigated potential contributing factor no definitive causal link confirmed. Resolution resolved incident mitigated restarting Veeam Backup Replication service restored database connectivity allowed Veeam Backup jobs resume. logs collected shared Veeam further analysis follow-up tasks created review resource sizing monitoring Uptycs behavior prevent recurrence.",
+    "product": "veeam",
+    "metadata": {
+      "component": "Veeam Backup and Recovery, PostgreSQL",
+      "date_occurred": "2025-04-23"
+    },
+    "date_occurred": "2025-04-23"
+  },
+  {
+    "id": "rca-014",
+    "document": "Datastore capacity exhaustion causing backup VM virtual machine operation failures. Veeam Backup jobs failed customers experienced VM power-on failures pending VM states due datastore capacity exhaustion. customer-initiated workload migrations all vm-disaster-recovery-service replications placed single NFS datastore exhausting capacity even though another datastore significant free space available. vm-disaster-recovery-service relies VMware Cloud Director vCD vCloud Director datastore placement scenario vCD vCloud Director repeatedly returned same datastore leading imbalance. alerting gaps occurred Slack webhook depended decommissioned DNS setup preventing timely notification datastore reached full capacity. Resolution resolved issue mitigated obtaining customer approval delete recreate replications freeing over 670 GB space impacted datastore. additional NFS storage capacity provisioned backup operations validated back business usual. follow-up problem tasks opened review vm-disaster-recovery-service placement strategy Broadcom fix alerting notification gaps.",
+    "product": "veeam",
+    "metadata": {
+      "component": "VMware Cloud Director, vm-disaster-recovery-service, NFS Datastore",
+      "date_occurred": "2025-04-26"
+    },
+    "date_occurred": "2025-04-26"
+  },
+  {
+    "id": "rca-015",
+    "document": "nsx Manager UI inaccessible affecting new workload provisioning. customers unable provision new VSIs because nsx Manager UI inaccessible resulting missing organization networks during new workload creation. known nsx software defect caused Corfu compactor leader become unresponsive due absence leader rotation over time. prevented compaction cycles running leading excessive memory consumption Cluster Boot Manager CBM service. memory exhausted CBM service crashed rendering nsx Manager UI inaccessible. Resolution resolved infra engineers rebooted all nsx Manager controller nodes restore Corfu compactor CBM services brought nsx UI back healthy state. new provisioning validated successfully post-recovery. longer-term mitigation plan created prevent recurrence until upgrade nsx version 4.2.2.",
+    "product": "nsx",
+    "metadata": {
+      "component": "nsx, nsx Manager",
+      "date_occurred": "2025-04-26"
+    },
+    "date_occurred": "2025-04-26"
+  },
+  {
+    "id": "rca-016",
+    "document": "Partially deleted Edge caused metering billing interruption. metering billing processes stopped after Edge associated Virtual Data Center VDC left partially deleted state blocking interval job completion. cleanup script intended remove orphaned Tier-0 T0 networking components mistakenly executed VDC not approved deletion. VDC still had Tier-1 T1 network attached script only partially deleted networking configuration leaving Edge broken state. Resolution resolved engineers manually deleted remaining T1 network nsx restarted stalled deletion task. corrected pending metering interval jobs resumed completed successfully.",
+    "product": "nsx",
+    "cbc": "CHG11582869",
+    "metadata": {
+      "component": "VMware Cloud Director, nsx Edge, Metering",
+      "date_occurred": "2025-06-17"
+    },
+    "date_occurred": "2025-06-17"
+  },
+  {
+    "id": "rca-017",
+    "document": "VM virtual machine provisioning migration failures encrypted vsan storage policies. customers unable order migrate virtual machines using encrypted vsan storage policies. network configuration change unintentionally introduced duplicate subnet SRX device causing incorrect routing intermittent connectivity loss between ESXi hosts vcenter. Resolution resolved engineers powered off misconfigured SRX corrected routing restarted affected ESXi hosts resynchronized storage providers vcenter.",
+    "product": "vsan",
+    "cbc": "CHG11505532",
+    "metadata": {
+      "component": "vsan, ESXi, nsx, VMware Cloud Director",
+      "date_occurred": "2025-06-23"
+    },
+    "date_occurred": "2025-06-23"
+  },
+  {
+    "id": "rca-018",
+    "document": "vm-disaster-recovery-service replications entered invalid state after vcenter certificate rotation. customer VM virtual machine replications using VMware Cloud Director vm-disaster-recovery-service failed showing invalid state. operators followed incomplete runbook during vcenter SSL certificate rotation failing accept new certificate vm-disaster-recovery-service appliances. Resolution resolved engineers accepted new certificate all vm-disaster-recovery-service appliances reconfigured affected replications.",
+    "product": "vm-disaster-recovery-service",
+    "cbc": "CHG11823186",
+    "metadata": {
+      "component": "VMware Cloud Director, vm-disaster-recovery-service, vcenter",
+      "date_occurred": "2025-07-02"
+    },
+    "date_occurred": "2025-07-02"
+  },
+  {
+    "id": "rca-019",
+    "document": "Firewall logs unavailable vCloud Director vCD vCloud Director Edge Gateway. customers unable view export firewall logs under Edge Gateway section vCloud Director vCD vCloud Director. service account used vCD vCloud Director vRLI vRealize Log Insight integration disabled required reconfiguration existing environments not performed. Resolution resolved engineers reconfigured integration new automation service account restored log ingestion.",
+    "product": "vcloud-director",
+    "cbc": "CHG11855684",
+    "metadata": {
+      "component": "vCloud Director, Edge Gateway, vRealize Log Insight, Aria logs",
+      "date_occurred": "2025-07-03"
+    },
+    "date_occurred": "2025-07-03"
+  },
+  {
+    "id": "rca-020",
+    "document": "Veeam Backup jobs failures due internal connectivity issue. Veeam Backup jobs may fail not complete successfully. nsx Manager stuck reconfiguring state while updating static routes associated AVI VIP. prevented internal components such Veeam Backup Replication VBR Veeam Backup Replication servers reaching vCloud Director vCD vCloud Director VIP due known nsx issue resulting Veeam Backup jobs failures. Resolution resolved restarted nsx Manager nodes sequentially force re-synchronization static routes ESXi routing tables restoring connectivity backup operations.",
+    "product": "veeam",
+    "metadata": {
+      "component": "nsx Manager, Veeam Backup (VBR)",
+      "date_occurred": "2025-08-03"
+    },
+    "date_occurred": "2025-08-03"
+  },
+  {
+    "id": "rca-021",
+    "document": "VM virtual machine connectivity loss due nsx Manager communication failure. virtual machines became unreachable due network connectivity loss. known JDK defect caused nsx managers reach thread limits preventing communication edge nodes. stopped propagation tunnel configuration resulting GENEVE tunnel failure. issue triggered during ongoing nsx upgrade. Resolution resolved performed rolling restart nsx Manager nodes restore communication edge nodes re-establish tunnels recovering connectivity.",
+    "product": "nsx",
+    "metadata": {
+      "component": "nsx Manager, nsx Edge Nodes, GENEVE Tunnels",
+      "date_occurred": "2025-08-05"
+    },
+    "date_occurred": "2025-08-05"
+  },
+  {
+    "id": "rca-022",
+    "document": "Veeam backup failure due Veeam Backup Replication VBR database resource bottleneck. Veeam Backup jobs failing not progressing. Veeam Backup Replication VBR Veeam Backup Replication database had insufficient resources after Veeam Backup Replication VBR scaling. concurrent execution multiple full Veeam Backup jobs along vsan resync caused high IO latency resource exhaustion database not resized accordingly. Resolution resolved allowed vsan resync complete stabilize storage performance restarted failed Veeam Backup jobs balanced workload across multiple proxies avoid saturation temporarily disabled Uptycs reduce database interference increased Veeam Backup Replication VBR database resources handle workload demand optimized Veeam Backup jobs scheduling prevent simultaneous resource spikes.",
+    "product": "veeam",
+    "metadata": {
+      "component": "Veeam Backup Replication (VBR), PostgreSQL DB, vsan, ESXi host, Backup Proxies",
+      "date_occurred": "2025-08-09"
+    },
+    "date_occurred": "2025-08-09"
+  },
+  {
+    "id": "rca-023",
+    "document": "nsx Edge provisioning failure due controller overload message storm. new edge nodes provisioning failing nodes stuck not ready state. existing edge nodes generated excessive synchronization traffic due known nsx issue overloaded destabilized nsx controllers. prevented timely processing new edge node messages resulting failed configuration registration. Resolution resolved reduced load nsx controllers deleting powering off unnecessary edge nodes performed controlled rolling restarts nsx controllers managers clear message queues monitored analyzed message queue buildup using vendor-provided scripts applied workarounds stabilize controller communication engaged vendor root cause analysis hotfix implemented actions minimize message storm improve system stability.",
+    "product": "nsx",
+    "metadata": {
+      "component": "nsx Manager, nsx Controllers, nsx Edge Nodes",
+      "date_occurred": "2025-08-05"
+    },
+    "date_occurred": "2025-08-05"
+  },
+  {
+    "id": "rca-024",
+    "document": "Veeam Veeam Backup jobs stuck due Uptycs interference Veeam Backup Replication VBR. Veeam Backup jobs stuck not progressing. Uptycs missing exclusion tags Veeam Backup Replication VBR Veeam Backup Replication causing real-time scanning Veeam Backup Replication VBR processes. interfered read-write operations made Veeam Backup Replication VBR system unresponsive. Resolution resolved restarted Veeam Backup Replication VBR server restore responsiveness resume Veeam Backup jobs temporarily reduced interference addressing Uptycs behavior validated corrected exclusion tagging Veeam Backup Replication VBR processes ensured proper handling database connections system resources implemented monitoring checks tagging consistency improved operational steps identify mitigate similar performance degradation scenarios.",
+    "product": "veeam",
+    "metadata": {
+      "component": "Veeam Backup Replication (VBR), PostgreSQL DB, Uptycs",
+      "date_occurred": "2025-08-30"
+    },
+    "date_occurred": "2025-08-30"
+  },
+  {
+    "id": "rca-025",
+    "document": "VDC provisioning failures Edge Gateway due vCD vCloud Director API platform version incompatibility. VDC provisioning requests Edge Gateway selection failing getting stuck non-completed state causing delays failed transactions customers. version mismatch between vCloud Director vCD vCloud Director APIs production vCloud Director platform caused API communication failures. API version upgraded v39.1 validated staging vCD vCloud Director version 10.6.1 production environment not upgraded v10.6.1 making incompatible newer API version. mismatch prevented successful execution provisioning API calls. Resolution resolved reverted API version used microservice compatible version deployed fix through CI/CD pipelines. refreshed service pods restarted failed provisioning tasks ensure successful completion. corrective actions defined including enforcing version compatibility checks aligning staging production environments enhancing pre-release validation testing processes.",
+    "product": "vcloud-director",
+    "cbc": "CHG12700605",
+    "metadata": {
+      "component": "vCloud Director, vCD vCloud Director APIs",
+      "date_occurred": "2025-09-10"
+    },
+    "date_occurred": "2025-09-10"
+  },
+  {
+    "id": "rca-026",
+    "document": "Veeam Backup jobs failures due service account lockout incorrect credential usage. multiple Veeam Backup jobs failing due authentication errors causing unsuccessful backup operations. Veeam Veeam Backup Replication VBR Veeam Backup Replication service account locked because Veeam One using same service account repeatedly attempted authentication incorrect password. continuous use wrong credentials led account lockout preventing successful authentication execution Veeam Backup jobs. exact reason Veeam One using incorrect password remains under investigation vendor. Resolution resolved issue mitigated stopping Veeam One prevent further account lockouts restoring Veeam Backup jobs operations. new Veeam One VM created connected database validate update credentials then failed back original system. passwords updated across components using vendor-recommended procedures restoring normal operations. follow-up actions include vendor investigation improving credential management implementing safeguards prevent service account lockouts.",
+    "product": "veeam",
+    "metadata": {
+      "component": "Veeam Backup Replication (VBR), Veeam One, Active Directory",
+      "date_occurred": "2025-09-14"
+    },
+    "date_occurred": "2025-09-14"
+  },
+  {
+    "id": "rca-027",
+    "document": "nsx certificate auto-renewal causing authentication failure between vCD vCloud Director nsx. users encountered errors accessing firewall rules due inability communicate nsx services. nsx feature introduced version 4.2.1 automatically renewed appliance certificates before expiry. new certificate not trusted vCloud Director vCD vCloud Director because no mechanism synchronize update certificate vCD vCloud Director. caused authentication failure between vCD vCloud Director nsx breaking communication. Resolution resolved issue manually trusting newly renewed nsx certificate vCloud Director restore communication. follow-up actions include evaluating whether enable disable auto-renewal feature aligning certificate management processes coordinating vendor guidance handling certificate updates.",
+    "product": "nsx",
+    "metadata": {
+      "component": "nsx Manager, vCloud Director",
+      "date_occurred": "2025-09-17"
+    },
+    "date_occurred": "2025-09-17"
+  },
+  {
+    "id": "rca-028",
+    "document": "VM virtual machine management failures during ESXi upgrade due forced vcenter vCD vCloud Director synchronization. customers experienced intermittent failures performing virtual machine management actions such power operations snapshots during upgrade. ESXi upgrade process forced synchronization between vcenter vCloud Director vCD vCloud Director triggered align hardware versions. involved repeated reconnections vCD vCloud Director API vcenter temporarily disrupted API operations caused VM management actions fail. impact not identified earlier due lack test validation such scenarios during SVT. Resolution resolved issue mitigated removing problematic ESXi host cluster restarting upgrade tasks allowing upgrade process proceed successfully. corrective actions include enhancing SVT coverage include VM operations during upgrades modifying upgrade workflows move force synchronization end updating runbooks avoid restarting specific tasks improving validation automation steps during upgrades.",
+    "product": "vcloud-director",
+    "cbc": "CHG12818483",
+    "metadata": {
+      "component": "vCloud Director, vcenter, ESXi Hosts",
+      "date_occurred": "2025-09-24"
+    },
+    "date_occurred": "2025-09-24"
+  },
+  {
+    "id": "rca-029",
+    "document": "VDC provisioning failure due incorrect T1-T0 validation logic network code. VDC creation requests failing blocking provisioning activities across multiple regions. software defect VDC creation logic caused system fetch validate all existing T1 network instances instead only those related target VDC. any unrelated T1 instance not connected T0 validation failed resulting provisioning failure. Resolution resolved issue mitigated deploying code fix bypassed validation unrelated T1 instances restored provisioning functionality. corrective actions defined including validating only VDC-specific T1 instances improving network mapping logic implementing monitoring T1-T0 connectivity issues enhancing automation detect handle dangling T1 instances.",
+    "product": "vcloud-director",
+    "metadata": {
+      "component": "vCloud Director",
+      "date_occurred": "2025-12-04"
+    },
+    "date_occurred": "2025-12-04"
+  },
+  {
+    "id": "rca-030",
+    "document": "Connectivity issue between VCFaaS PowerVS. customer connectivity VCFaaS Power VSI via Transit Gateway failed due BGP session outages caused unintended deletion transit gateway subnet triggered defect automated cleanup script. root cause issue defect introduced cleanup script modification aimed standardizing nsx API behavior across environments. defect caused identical values assigned both subnets meant preservation deletion resulting unintended removal subnet actively used Transit Gateway. consequently connectivity between Transit Gateway resources disrupted leading BGP session failures loss connectivity between VCFaaS Power VSI. defect went undetected due inadequate adherence established testing protocols. Resolution resolved identified restored secondary classic subnet.",
+    "product": "vcloud-director",
+    "cbc": "CHG13880719",
+    "metadata": {
+      "component": "TGW, BGP, nsx",
+      "date_occurred": "2025-12-03"
+    },
+    "date_occurred": "2025-12-03"
+  },
+  {
+    "id": "rca-031",
+    "document": "Edge deployments failing Dallas affecting customer. edge deployment failed due expired nsx Manager certificate preventing OVF signature validation. edge deployment failure DAL environment caused expired internal certificate expired January 3 2026 used nsx Manager sign edge OVF template. prevented nsx Manager validating OVF signatures halting deployment process. certificate expiration known issue affecting multiple nsx versions documented Broadcom. Resolution resolved identified applied fix recommended Broadcom KB424034.",
+    "product": "vcloud-director",
+    "metadata": {
+      "component": "nsx, Edge",
+      "date_occurred": "2026-01-12"
+    },
+    "date_occurred": "2026-01-12"
+  },
+  {
+    "id": "rca-032",
+    "document": "VPN tunnel between FortiGate VMware Cloud Director DR not establishing. VPN tunnel between FortiGate VMware Cloud Director DR not establishing resulting no connectivity between endpoints. VPN tunnel failed establish due lack return traffic T1 gateway VMware Cloud Director side. although outbound traffic successfully sent T0 no response received T1 indicating likely issue within nsx Broadcom-managed network requires further investigation. Resolution resolved customer changed peer IP VPN restored. appeared customer issue since particular IP being blocked.",
+    "product": "nsx",
+    "metadata": {
+      "component": "nsx, gateway",
+      "date_occurred": "2026-01-17"
+    },
+    "date_occurred": "2026-01-17"
+  },
+  {
+    "id": "rca-033",
+    "document": "VLP customers facing intermittent connectivity issue. customers experienced intermittent connectivity issues VLP. issue caused inappropriately low timeout value 30 seconds configured nsx load balancer application profile led connections being prematurely terminated during idle periods. Resolution resolved updated keep-Alive timeout 30seconds 5minutes VCFaaS AVI Load balancer.",
+    "product": "nsx",
+    "metadata": {
+      "component": "VLP, AVI Load balancer",
+      "date_occurred": "2026-01-15 "
+    },
+    "date_occurred": "2026-01-15 "
+  },
+  {
+    "id": "rca-034",
+    "document": "Customer tasks failing vCD vCloud Director. customer operations vCloud Director failing due authentication breakdown vcenter impacting normal platform functionality. customer task failures vCloud Director occurred due disruption vcenter integration caused authentication failure. happened because vCloud Director misconfigured use administrator account instead designated service account administrator account password changed externally. origin misconfiguration could not determined no evidence found automation logs incident records. Resolution resolved incorrect vcenter credentials identified updated designated service account. vcenter connection reconfigured reconnected refreshed along storage policies restoring normal vCloud Director operations.",
+    "product": "vcloud-director",
+    "metadata": {
+      "component": "vCloud Director (vCD vCloud Director), vcenter",
+      "date_occurred": "2026-02-09"
+    },
+    "date_occurred": "2026-02-09"
+  },
+  {
+    "id": "rca-035",
+    "document": "15 VMs virtual machines backup failed other errors. Veeam Backup jobs 15 virtual machines failed because snapshot operations ESXi host not functioning. issue occurred due hostd service becoming unresponsive preventing successful backup execution. backup failures occurred because ESXi host hostd service became unresponsive disrupted snapshot operations required backups. underlying cause hardware failure faulty DIMM memory led hostd service hang. Resolution resolved issue replacing faulty DIMM memory identified SoftLayer restoring hostd service stability normal snapshot backup operations.",
+    "product": "veeam",
+    "metadata": {
+      "component": "Veeam, ESXi, vcenter",
+      "date_occurred": "2026-02-15"
+    },
+    "date_occurred": "2026-02-15"
+  },
+  {
+    "id": "rca-036",
+    "document": "Backup failed 7 VMs virtual machines BNPP W004. backup failures occurred 7 VMs due ESXi host becoming unresponsive preventing proper snapshot backup operations. backup failures 7 VMs caused ESXi host becoming unresponsive due ESXi boot bank communication issue between VMkernel boot device. prevented proper snapshot backup handling. issue likely triggered temporary software firmware glitch rather hardware fault normal functionality restored after host reboot. Resolution resolved issue obtaining approval performing reboot affected ESXi host w004p04esx012 restored communication ESXi boot device brought host back responsive state. post-reboot backup operations monitored confirmed functioning normally.",
+    "product": "veeam",
+    "metadata": {
+      "component": "ESXi, vcenter, Veeam",
+      "date_occurred": "2026-03-02"
+    },
+    "date_occurred": "2026-03-02"
+  },
+  {
+    "id": "rca-037",
+    "document": "vm-disaster-recovery-service test failover actions failing unexpected error. vm-disaster-recovery-service test failover operations failing due incorrect datastore inaccessibility detection despite datastore being healthy operational. vm-disaster-recovery-service test failover operations failed because datastore reported inaccessible vm-disaster-recovery-service despite being healthy supporting ongoing replications exact cause incorrect accessibility detection under investigation Broadcom case 36828414. Resolution resolved refreshed backend datastore resolved issue.",
+    "product": "vm-disaster-recovery-service",
+    "metadata": {
+      "component": "vm-disaster-recovery-service",
+      "date_occurred": "2026-03-02"
+    },
+    "date_occurred": "2026-03-02"
+  },
+  {
+    "id": "rca-038",
+    "document": "Customer VM virtual machine inaccessible FRA. VM FRA became inaccessible due ESXi host outage caused out-of-memory condition resulting I/O errors file locks preventing failover. VM became inaccessible because ESXi host w002f04esx021 entered out-of-memory condition caused long-running packet capture leading I/O failures file locks prevented another host acquiring ownership VM. Resolution resolved affected host placed maintenance mode rebooted clear issue causing VM file locks. restored access impacted VM. most VMs already recovered via restart remaining inaccessible VM became accessible post-host recovery customer confirmation.",
+    "product": "vcenter",
+    "metadata": {
+      "component": "ESXi Host, Datastore, Storage , vcenter",
+      "date_occurred": "2026-03-17"
+    },
+    "date_occurred": "2026-03-17"
+  },
+  {
+    "id": "rca-039",
+    "document": "VM virtual machine connectivity loss due nsx Manager communication failure. around 2000 VMs virtual machines impacted customers unable access connect reach workloads. nsx Edge nodes experienced network connectivity issues. known JDK defect caused nsx Managers reach thread limits preventing communication Edge nodes. stopped propagation tunnel configuration resulting GENEVE tunnel failure outage. issue triggered during ongoing nsx upgrade. Resolution resolved performed rolling restart reboot nsx Manager nodes restore communication Edge nodes re-establish GENEVE tunnels recover connectivity. preventive action Broadcom recommended periodic rolling reboots nsx Managers avoid recurrence.",
+    "cbc": "CHG11889971",
+    "product": "nsx",
+    "metadata": {
+      "component": "nsx",
+      "date_occurred": "2025-08-05"
+    },
+    "date_occurred": "2025-08-05"
+  },
+  {
+    "id": "rca-040",
+    "document": "Veeam backup server issues outage performance degradation. users unable start virtual machine VM backups. DAL W082 Veeam Backup Replication Veeam Backup Replication VBR server experienced outage sustained performance degradation slow. PostgreSQL database process failing failed start disrupted Veeam Backup Replication VBR functionality. reboot temporarily restored services Veeam Backup Replication VBR server continued perform slowly. disk performance analysis Veeam Backup Replication VBR VM revealed high latency ratios indicating underlying storage slowness. infrastructure investigation identified ongoing large snapshot deletion over 11 TB vRlog VMs causing elevated vsan storage VM disk latency. storage contention likely contributed degraded Veeam Backup Replication VBR performance intermittent service failures. Resolution resolved several vRlog VM snapshot deletions aborted active vRlog Veeam Backup jobs stopped reduce storage load. action improved Veeam Backup Replication VBR responsiveness though performance remained constrained. subsequently PostgreSQL database restarted Uptycs tags corrected all Veeam backup services restarted. steps restored normal Veeam Backup Replication VBR operations allowed backup activities resume successfully.",
+    "cbc": "CHG13167711",
+    "product": "veeam",
+    "metadata": {
+      "component": "Veeam, database",
+      "date_occurred": "2025-10-10"
+    },
+    "date_occurred": "2025-10-10"
+  },
+  {
+    "id": "rca-041",
+    "document": "nsx cluster status showing UNAVAILABLE unavailable not available down. nsx Manager cluster experienced unavailability impacting management plane operations control plane. Corfu-related symptoms issues problems intensified elevated vsan latency caused resynchronization resync activity. increased storage latency amplified known Corfu sensitivity ultimately leading failure. vsan utilization crossed recommended operational thresholds typically 70% resulting performance degradation slow. storage latency adversely impact nsx stability emphasizing importance strict capacity management proactive monitoring. Resolution resolved rolling reboot nsx Managers restored cluster availability. preventive measure Broadcom recommended performing periodic rolling reboots nsx Managers enforcing proactive vsan capacity latency monitoring prevent recurrence.",
+    "cbc": "CHG12664975",
+    "product": "nsx",
+    "metadata": {
+      "component": "nsx",
+      "date_occurred": "2025-10-21"
+    },
+    "date_occurred": "2025-10-21"
+  }
+]
