@@ -3,6 +3,14 @@ from langchain_core.prompts import PromptTemplate
 from langchain_openai import ChatOpenAI
 from langchain_core.messages import HumanMessage
 from agent_loop_langchain_tool import run_agent
+
+from langchain_core.messages import HumanMessage
+from langgraph.graph import MessagesState, StateGraph,END
+
+from nodes import run_agent_reasoning, tool_node
+
+
+
 from config import (
     INGESTION_FILE_PATH,
     MODEL_NAME,
@@ -21,6 +29,8 @@ from search_agent import agent
 
 
 load_dotenv()
+
+
 
 
 def first_example():
@@ -58,6 +68,31 @@ def first_example():
     print(result.text)
 
 
+AGENT_REASON="agent_reason"
+ACT= "act"
+LAST = -1
+
+
+def should_continue(state: MessagesState) -> str:
+    if not state["messages"][LAST].tool_calls:
+        return END
+    return ACT
+
+
+flow = StateGraph(MessagesState)
+
+flow.add_node(AGENT_REASON, run_agent_reasoning)
+flow.set_entry_point(AGENT_REASON)
+flow.add_node(ACT, tool_node)
+
+flow.add_conditional_edges(AGENT_REASON, should_continue, {
+    END:END,
+    ACT:ACT})
+
+flow.add_edge(ACT, AGENT_REASON)
+
+app = flow.compile()
+app.get_graph().draw_mermaid_png(output_file_path="flow.png")
 
 def main():
     print("Inside main function")
@@ -90,19 +125,25 @@ def main():
     
     
     #query = "nsx in degraded state"
-    query = "replications in red state"
+    #query = "replications in red state"
 
-    relevant_docs = retrieve_relevant_documents(query)
-    print("\nRetrieved documents:")
-    for doc in relevant_docs:
-        print(doc.metadata)
-        print(doc.page_content[:300])
-        print()
+    #relevant_docs = retrieve_relevant_documents(query)
+    #print("\nRetrieved documents:")
+    #for doc in relevant_docs:
+    #    print(doc.metadata)
+    #    print(doc.page_content[:300])
+    #    print()
     
-    chain_with_lcel = create_retrieval_chain_with_lcel()
-    result_with_lcel = chain_with_lcel.invoke({"question": query})
-    print("\nAnswer:")
-    print(result_with_lcel)    
+    #chain_with_lcel = create_retrieval_chain_with_lcel()
+    #result_with_lcel = chain_with_lcel.invoke({"question": query})
+    #print("\nAnswer:")
+    #print(result_with_lcel)    
+    
+
+    
+    print("Hello ReAct LangGraph with Function Calling")
+    res = app.invoke({"messages": [HumanMessage(content="What is the temperature in Nagpur? List it and then triple it")]})
+    print(res["messages"][LAST].content)        
 
 if __name__ == "__main__":
     main()

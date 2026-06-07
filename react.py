@@ -13,8 +13,9 @@ def triple(num:float) -> float:
     param num: a number to triple
     returns: the triple of the input number
     """
+    print(f"Current temp is {num}")
     return float(num) * 3
 
-tools = [TavilySearch(max_results=1), triple]
+tools = [TavilySearch(max_results=1, include_answer=True), triple]
 
 llm = init_chat_model(model=MODEL_NAME, temperature=0).bind_tools(tools)
